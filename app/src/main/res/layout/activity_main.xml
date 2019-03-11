@@ -152,7 +152,7 @@
                     android:layout_marginBottom="3dp"
                     android:layout_weight="1"
                     android:text="@string/city"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -162,7 +162,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:text="city"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textViewCountry"
@@ -171,7 +171,7 @@
                     android:layout_marginBottom="3dp"
                     android:layout_weight="1"
                     android:text="@string/country"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
@@ -194,7 +194,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="country"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <TextView
@@ -204,7 +204,7 @@
                     android:layout_marginBottom="3dp"
                     android:layout_weight="1"
                     android:text="@string/isp"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -214,7 +214,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:text="isp"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textViewCoord"
@@ -223,7 +223,7 @@
                     android:layout_marginBottom="3dp"
                     android:layout_weight="1"
                     android:text="@string/coordinates"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -233,7 +233,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:text="coordinates"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textViewOrg"
@@ -242,7 +242,7 @@
                     android:layout_marginBottom="3dp"
                     android:layout_weight="1"
                     android:text="@string/organization"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -252,7 +252,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:text="organization"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textViewIp"
@@ -261,7 +261,7 @@
                     android:layout_marginBottom="3dp"
                     android:layout_weight="1"
                     android:text="@string/ip_address"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -271,7 +271,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:text="ip address"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textViewRegion"
@@ -280,7 +280,7 @@
                     android:layout_marginBottom="3dp"
                     android:layout_weight="1"
                     android:text="@string/region_name"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -290,7 +290,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:text="region"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textViewRegionCode"
@@ -299,7 +299,7 @@
                     android:layout_marginBottom="3dp"
                     android:layout_weight="1"
                     android:text="@string/region"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -309,7 +309,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:text="region code"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textViewZip"
@@ -318,7 +318,7 @@
                     android:layout_marginBottom="3dp"
                     android:layout_weight="1"
                     android:text="@string/zip"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -328,7 +328,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:text="zip"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
         </LinearLayout>
