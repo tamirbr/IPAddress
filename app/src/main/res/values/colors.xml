@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0082ae</color>
+    <color name="colorPrimaryDark">#004963</color>
+    <color name="colorAccent">#56d4ff</color>
+
+    <color name="button">#008eec</color>
+    <color name="buttonDark">#007acc</color>
+    <color name="buttonDarker">#0072be</color>
+
+    <color name="mainText">#535353</color>
+    <color name="transperent">#535353</color>
+    <color name="bg_search">#f5f5f5</color>
+    <color name="blank_bg">#00ffffff</color>
+    <color name="nav_bg">#ffffff</color>
+
+</resources>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">IP Address</string>
+    <string name="network_error">Network error</string>
+    <string name="data_error">Data error</string>
+    <string name="search_ip">Search for ip address</string>
+    <string name="my_ip_info">Check my</string>
+    <string name="info">information</string>
+    <string name="maps">Open location</string>
+    <string name="close">Close</string>
+    <string name="not_installed">Application not installed</string>
+
+    <string name="city">City</string>
+    <string name="country">Country</string>
+    <string name="country_code">Country Code</string>
+    <string name="isp">Internet Service Provider</string>
+    <string name="coordinates">Coordinates</string>
+    <string name="organization">Organization</string>
+    <string name="ip_address">IP Address</string>
+    <string name="region">Region Code</string>
+    <string name="region_name">Region Name</string>
+    <string name="timezone">Time Zone</string>
+    <string name="zip">Postal Code</string>
+
+</resources>
