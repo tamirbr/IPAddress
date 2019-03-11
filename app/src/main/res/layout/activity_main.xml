@@ -59,8 +59,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
-                    android:inputType="text"
+                    android:contentDescription="@string/search_ip"
                     android:imeOptions="actionDone"
+                    android:inputType="text"
                     android:textColor="@color/mainText"
                     android:textSize="20sp"
                     tools:text="@string/search_ip" />
@@ -80,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
                 android:layout_weight="1"
                 android:inputType="text"
                 android:onClick="getMyIpInfo"
