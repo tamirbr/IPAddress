@@ -47,7 +47,6 @@ public class ServerConnections {
                     }
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(activity.getApplicationContext());
-        requestQueue.getCache().clear();
         stringRequest.setShouldCache(false);
         requestQueue.add(stringRequest);
     }
@@ -76,7 +75,6 @@ public class ServerConnections {
                     }
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(activity.getApplicationContext());
-        requestQueue.getCache().clear();
         stringRequest.setShouldCache(false);
         requestQueue.add(stringRequest);
     }

@@ -143,34 +143,37 @@ public class MainActivity extends CustomAppCompat implements OnMapReadyCallback,
         regionCode.setText(ipInfo.getRegion());
         zip.setText(ipInfo.getZip());
         countryFlag.setImageResource(getResources().getIdentifier(ipInfo.getCountryCode().toLowerCase() , "drawable", getPackageName()));
-        LatLng ny = new LatLng(ipInfo.getLat(),ipInfo.getLon());
-        gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
-        MarkerOptions markerOptions = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.mipmap.self_marker))
-                .position(new LatLng(ipInfo.getLat(),ipInfo.getLon()));
-        if(ipMarker != null){
-            ipMarker.remove();
-        }
-        ipMarker = gmap.addMarker(markerOptions);
-        gmap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
 
-            @Override
-            public boolean onMarkerClick(Marker marker) {
-                dialog = new AppCompatDialog(MainActivity.this,R.style.FullHeightDialog);
-                dialog.setContentView(R.layout.maps_popup);
-                dialog.setTitle(getString(R.string.maps));
-
-                ImageView imageViewClose = (ImageView) dialog.findViewById(R.id.imageViewClose);
-                imageViewClose.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }
-                });
-
-                dialog.show();
-                return false;
+        if(gmap != null){
+            LatLng ny = new LatLng(ipInfo.getLat(),ipInfo.getLon());
+            gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
+            MarkerOptions markerOptions = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.mipmap.self_marker))
+                    .position(new LatLng(ipInfo.getLat(),ipInfo.getLon()));
+            if(ipMarker != null){
+                ipMarker.remove();
             }
-        });
+            ipMarker = gmap.addMarker(markerOptions);
+            gmap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+
+                @Override
+                public boolean onMarkerClick(Marker marker) {
+                    dialog = new AppCompatDialog(MainActivity.this,R.style.FullHeightDialog);
+                    dialog.setContentView(R.layout.maps_popup);
+                    dialog.setTitle(getString(R.string.maps));
+
+                    ImageView imageViewClose = (ImageView) dialog.findViewById(R.id.imageViewClose);
+                    imageViewClose.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.show();
+                    return false;
+                }
+            });
+        }
 
         if(newRequest){
             dbHistory.add(ipInfo);
@@ -252,9 +255,13 @@ public class MainActivity extends CustomAppCompat implements OnMapReadyCallback,
         super.onLowMemory();
         mapView.onLowMemory();
     }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         gmap = googleMap;
         gmap.setMinZoomPreference(10);
+        gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(0, 0), 10));
     }
+
+
 }
