@@ -15,6 +15,9 @@
     <string name="donate">Donate with PayPal</string>
     <string name="soon">Coming soon!</string>
     <string name="show">Show details</string>
+    <string name="delete_ip_history">Delete ip search data?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
 
     <string name="city">City</string>
     <string name="country">Country</string>

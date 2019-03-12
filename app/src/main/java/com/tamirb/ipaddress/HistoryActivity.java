@@ -1,16 +1,21 @@
 package com.tamirb.ipaddress;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -67,6 +72,43 @@ public class HistoryActivity extends CustomAppCompat {
                 TextView ip = (TextView)theView.findViewById(R.id.ip);
                 TextView show = (TextView)theView.findViewById(R.id.show);
                 TextView date = (TextView)theView.findViewById(R.id.date);
+                LinearLayout row = (LinearLayout)theView.findViewById(R.id.ipRow);
+                row.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        final Dialog dialog = new AppCompatDialog(getContext(),R.style.FullHeightDialog);
+                        dialog.setContentView(R.layout.delete_history_popup);
+                        dialog.setTitle(getString(R.string.maps));
+
+                        ImageView imageViewClose = (ImageView) dialog.findViewById(R.id.imageViewClose);
+                        imageViewClose.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                        Button cancel = (Button) dialog.findViewById(R.id.buttonCancel);
+                        cancel.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                            }
+                        });
+                        Button delete = (Button) dialog.findViewById(R.id.buttonDelete);
+                        delete.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dbHistory.delete(ipInfo.getIp());
+                                dialog.dismiss();
+                                finish();
+                                startActivity(getIntent());
+                            }
+                        });
+
+                        dialog.show();
+                    }
+                });
 
                 ip.setText(ipInfo.getIp());
                 show.setOnClickListener(new View.OnClickListener() {

@@ -31,8 +31,9 @@ public class DBHistory {
         SQLiteDatabase db = myHelper.getReadableDatabase();
         String query = "SELECT * FROM " + DBConstants.IP_TABLE_NAME + " WHERE " + DBConstants.IP_IP_COLUMN +" = '"+ip+"'";
         Cursor cursor = db.rawQuery(query, new String[] {});
-        IpInfo ipInfo = new IpInfo();
+        IpInfo ipInfo = null;
         if (cursor.moveToFirst()){
+            ipInfo = new IpInfo();
             ipInfo.setCity       (cursor.getString(cursor.getColumnIndex(DBConstants.IP_CITY_COLUMN        )));
             ipInfo.setCountry    (cursor.getString(cursor.getColumnIndex(DBConstants.IP_COUNTRY_COLUMN     )));
             ipInfo.setCountryCode(cursor.getString(cursor.getColumnIndex(DBConstants.IP_COUNTRY_CODE_COLUMN)));
@@ -50,6 +51,7 @@ public class DBHistory {
                 e.printStackTrace();
             }
         }
+
         return ipInfo;
     }
 
@@ -77,9 +79,9 @@ public class DBHistory {
         }
     }
 
-    public void delete(IpInfo ipInfo) {
+    public void delete(String ipAddress) {
         mydb = myHelper.getWritableDatabase();
-        mydb.delete(DBConstants.IP_TABLE_NAME, DBConstants.IP_IP_COLUMN + "='" + ipInfo.getIp()+"'", null);
+        mydb.delete(DBConstants.IP_TABLE_NAME, DBConstants.IP_IP_COLUMN + "='" + ipAddress+"'", null);
     }
 
     public ArrayList<IpInfo> getAllIpSearches()
