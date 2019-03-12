@@ -1,5 +1,7 @@
 package com.tamirb.ipaddress.Model;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +22,8 @@ public class IpInfo {
     private String ip;
     private String region;
     private String regionName;
-    private String timeZone;
     private String zip;
+
+    private Date dateSearched;
+
 }

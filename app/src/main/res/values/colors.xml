@@ -12,6 +12,7 @@
     <color name="transperent">#535353</color>
     <color name="bg_search">#fafafa</color>
     <color name="blank_bg">#00ffffff</color>
+    <color name="line">#C4C4C4</color>
     <color name="nav_bg">#ffffff</color>
 
 </resources>

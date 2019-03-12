@@ -1,9 +1,12 @@
 package com.tamirb.ipaddress.Utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SyncResult;
+import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
+import android.view.View;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.HttpStack;

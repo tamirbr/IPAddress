@@ -20,8 +20,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.tamirb.ipaddress.DB.DBHistory;
 import com.tamirb.ipaddress.Model.IpInfo;
 import com.tamirb.ipaddress.Utils.AdViewLoad;
+import com.tamirb.ipaddress.Utils.Constants;
 import com.tamirb.ipaddress.Utils.ProgressBar;
 import com.tamirb.ipaddress.Utils.ServerConnections;
 
@@ -49,6 +51,8 @@ public class MainActivity extends CustomAppCompat implements OnMapReadyCallback,
     private Marker ipMarker;
     private AppCompatDialog dialog;
     private ImageView countryFlag;
+    private DBHistory dbHistory;
+    public static String ipAddress;
 
     public ProgressBar bar;
     public View mProgressView;
@@ -84,8 +88,19 @@ public class MainActivity extends CustomAppCompat implements OnMapReadyCallback,
         mapView.onCreate(null);
         mapView.getMapAsync(this);
 
+        dbHistory = new DBHistory(this);
+
         //AdMob initialize
         new AdViewLoad().start(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(ipInfoTable.getVisibility() == View.VISIBLE){
+            backToMain(new View(this));
+        } else{
+            finish();
+        }
     }
 
     public void getIpInfo(View view){
@@ -101,6 +116,7 @@ public class MainActivity extends CustomAppCompat implements OnMapReadyCallback,
 
     public void getMyIpInfo(View view){
         bar.showProgress(this,true,mProgressView,mFormView);
+        searchIp.setText("");
         searchTable.setBackgroundResource(R.drawable.forms_good_bg);
         ServerConnections.getIPInfo("",this);
     }
@@ -112,7 +128,7 @@ public class MainActivity extends CustomAppCompat implements OnMapReadyCallback,
         myIpInfo.setVisibility(View.VISIBLE);
     }
 
-    public void ipInfoData(IpInfo ipInfo){
+    public void ipInfoData(IpInfo ipInfo,boolean newRequest){
         bg.setBackgroundColor(getResources().getColor(R.color.bg_search));
         ipInfoTable.setVisibility(View.VISIBLE);
         myIpInfo.setVisibility(View.GONE);
@@ -156,6 +172,9 @@ public class MainActivity extends CustomAppCompat implements OnMapReadyCallback,
             }
         });
 
+        if(newRequest){
+            dbHistory.add(ipInfo);
+        }
         bar.showProgress(this,false,mProgressView,mFormView);
     }
 
@@ -175,6 +194,20 @@ public class MainActivity extends CustomAppCompat implements OnMapReadyCallback,
         } else {
             // App not installed
             Toast.makeText(this,getString(R.string.not_installed),Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode){
+            case Constants.HISTORY_ACTIVITY:
+                if(resultCode == RESULT_OK && data != null){
+                    IpInfo ipInfo = dbHistory.getByIp(data.getStringExtra(ipAddress));
+                    searchIp.setText(ipInfo.getIp());
+                    ipInfoData(ipInfo,false);
+                }
         }
     }
 
