@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">כתובת IP</string>
+    <string name="network_error">שגיאת אינטרנט</string>
+    <string name="data_error">שגיאת נתונים</string>
+    <string name="search_ip">חפש  כתובת IP</string>
+    <string name="my_ip_info">בדוק את כתובת</string>
+    <string name="info">שלי</string>
+    <string name="maps">פתח מיקום</string>
+    <string name="close">סגור</string>
+    <string name="not_installed">אפליקציה לא מותקנת</string>
+    <string name="menu">תפריט</string>
+    <string name="history">חפש היסטוריה</string>
+    <string name="share_app">שתף</string>
+    <string name="language">בחר שפה</string>
+    <string name="donate">תרום עם PayPal</string>
+    <string name="soon">בקרוב!</string>
+    <string name="show">הראה פרטים</string>
+    <string name="delete_ip_history">מחק את פרטי החיפוש?</string>
+    <string name="delete">מחק</string>
+    <string name="cancel">בטל</string>
+
+    <string name="city">עיר</string>
+    <string name="country">מדינה</string>
+    <string name="country_code">קוד מדינה</string>
+    <string name="isp">ספק אינטרנט</string>
+    <string name="coordinates">קואורדינטות</string>
+    <string name="organization">ארגון</string>
+    <string name="ip_address">כתובת IP</string>
+    <string name="region">קוד אזור</string>
+    <string name="region_name">אזור</string>
+    <string name="timezone">אזור זמן</string>
+    <string name="zip">מיקוד</string>
+    <string name="title_activity_history">היסטוריה</string>
+
+    <string name="english">אנגלית</string>
+    <string name="hebrew">עברית</string>
+
+</resources>

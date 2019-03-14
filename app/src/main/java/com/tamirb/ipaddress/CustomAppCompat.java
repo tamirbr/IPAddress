@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDialog;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.tamirb.ipaddress.Utils.Constants;
@@ -60,8 +62,22 @@ public class CustomAppCompat extends AppCompatActivity {
         startActivity(Intent.createChooser(i, "choose one"));
     }
 
+    public void onClickLanguageMenu (View view){
+        LinearLayout languages = menuDialog.findViewById(R.id.langOptions);
+        if(languages.getVisibility() == View.VISIBLE){
+            languages.setVisibility(View.GONE);
+        } else{
+            languages.setVisibility(View.VISIBLE);
+        }
+    }
+
     public void onClickLanguage (View view){
-        Toast.makeText(this,getString(R.string.soon),Toast.LENGTH_SHORT).show();
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString(Constants.LOCALE, view.getTag().toString());
+        editor.commit();
+        finish();
+        startActivity(getIntent());
     }
 
     public void onClickHistory (View view){
@@ -70,7 +86,6 @@ public class CustomAppCompat extends AppCompatActivity {
             Intent history = new Intent(this, HistoryActivity.class);
             startActivityForResult(history,Constants.HISTORY_ACTIVITY);
         }
-
         //Toast.makeText(this,getString(R.string.soon),Toast.LENGTH_SHORT).show();
     }
 }

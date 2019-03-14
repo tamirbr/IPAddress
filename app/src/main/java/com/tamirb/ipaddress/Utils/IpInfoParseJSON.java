@@ -18,6 +18,10 @@ public class IpInfoParseJSON {
         }
         try {
             JSONObject jo = new JSONObject(json);
+            if(jo.getString("status").equals("fail")){
+                return null;
+            }
+
             ipInfo = new IpInfo();
             ipInfo.setCity(jo.getString("city"));
             ipInfo.setCountry(jo.getString("country"));
@@ -45,6 +49,10 @@ public class IpInfoParseJSON {
         }
         try {
             JSONObject jo = new JSONObject(json);
+            if(jo.getString("status").equals("fail")){
+                return null;
+            }
+
             ipInfo = new IpInfo();
             ipInfo.setCity(jo.getString("city"));
             ipInfo.setCountry(jo.getString("country"));

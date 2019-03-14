@@ -10,7 +10,7 @@
     <string name="not_installed">Application not installed</string>
     <string name="menu">Menu</string>
     <string name="history">Search History</string>
-    <string name="share_app">Share the application</string>
+    <string name="share_app">Share</string>
     <string name="language">Choose Language</string>
     <string name="donate">Donate with PayPal</string>
     <string name="soon">Coming soon!</string>
@@ -31,5 +31,8 @@
     <string name="timezone">Time Zone</string>
     <string name="zip">Postal Code</string>
     <string name="title_activity_history">HistoryActivity</string>
+
+    <string name="english">English</string>
+    <string name="hebrew">Hebrew</string>
 
 </resources>

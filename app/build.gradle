@@ -7,8 +7,8 @@ android {
         applicationId "com.tamirb.ipaddress"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 3
-        versionName "1.2"
+        versionCode 4
+        versionName "1.21"
         vectorDrawables.useSupportLibrary = true
         android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
         multiDexEnabled true

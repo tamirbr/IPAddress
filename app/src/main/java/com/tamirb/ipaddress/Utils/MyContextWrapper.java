@@ -20,16 +20,16 @@ public class MyContextWrapper extends ContextWrapper {
         Locale sysLocale = null;
 
         switch(language){
-            case "English":
+            case "en":
                 sysLocale = new Locale("en");
                 break;
-            case "русский":
+            case "ru":
                 sysLocale = new Locale("ru");
                 break;
-            case "עברית":
+            case "he":
                 sysLocale = new Locale("he");
                 break;
-            case "عربى":
+            case "ar":
                 sysLocale = new Locale("ar");
                 break;
             default:

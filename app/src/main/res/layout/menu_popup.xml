@@ -94,7 +94,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:onClick="onClickLanguage"
+                android:onClick="onClickLanguageMenu"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -114,6 +114,69 @@
                     android:text="@string/language"
                     android:textColor="@color/mainText"
                     android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/langOptions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:onClick="onClickLanguage"
+                    android:orientation="horizontal"
+                    android:tag="en">
+
+                    <ImageView
+                        android:id="@+id/imageViewLang"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        app:srcCompat="@drawable/us" />
+
+                    <TextView
+                        android:id="@+id/textViewLang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/english"
+                        android:textColor="@color/mainText"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:onClick="onClickLanguage"
+                    android:orientation="horizontal"
+                    android:tag="he">
+
+                    <ImageView
+                        android:id="@+id/imageViewLang"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10"
+                        app:srcCompat="@drawable/il" />
+
+                    <TextView
+                        android:id="@+id/textViewLang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/hebrew"
+                        android:textColor="@color/mainText"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
