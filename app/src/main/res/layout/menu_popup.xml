@@ -135,14 +135,14 @@
                     android:tag="en">
 
                     <ImageView
-                        android:id="@+id/imageViewLang"
+                        android:id="@+id/imageViewLangEng"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="10"
                         app:srcCompat="@drawable/us" />
 
                     <TextView
-                        android:id="@+id/textViewLang"
+                        android:id="@+id/textViewLangEng"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -161,14 +161,14 @@
                     android:tag="he">
 
                     <ImageView
-                        android:id="@+id/imageViewLang"
+                        android:id="@+id/imageViewLangHeb"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="10"
                         app:srcCompat="@drawable/il" />
 
                     <TextView
-                        android:id="@+id/textViewLang"
+                        android:id="@+id/textViewLangHeb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
